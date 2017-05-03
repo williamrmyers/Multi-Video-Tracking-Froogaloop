@@ -15,16 +15,62 @@
   <script src="script.js"></script>
   <!-- custom style end -->
 
+
+
 </head>
 <body>
 
 <div class="container">
 
+  <h1>Vimeo Multi Video Tracking</h1>
 
 
+<!--   <iframe id="player1" src="https://player.vimeo.com/video/76979871?api=1&player_id=player1" width="630" height="354" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+
+
+<iframe id="player1" class="tracking video-tracking" data-video="VEILHYMN HYMN" src="https://player.vimeo.com/video/208509565?amp=1&player_id=player1" width="640" height="360" frameborder="0" autoplay webkitallowfullscreen mozallowfullscreen api allowfullscreen></iframe>
+<p><a href="https://vimeo.com/208509565">VEILHYMN &quot;HYMN&quot; - Director&#039;s Cut</a> from <a href="https://vimeo.com/maliajames">Malia James</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+
+<iframe id="player2"  class="tracking video-tracking" data-video="Dans la joie et la bonne humeur/ With joy and merriness" src="https://player.vimeo.com/video/208671767?amp=1&player_id=player2" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/208671767">Dans la joie et la bonne humeur/ With joy and merriness</a> from <a href="https://vimeo.com/jeanneboukraa">jeanne Boukraa</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+<iframe id="player3"  class="tracking video-tracking" data-video="DID YOU REALLY SAY NO" src="https://player.vimeo.com/video/208671767?amp=1&player_id=player3" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+<p><a href="https://vimeo.com/?207505512?amp=1&player_id=player3">DID YOU REALLY SAY NO / Oren Lavie ft. Vanessa Paradis</a> from <a href="https://vimeo.com/orenlavievimeo">Oren Lavie</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
 
 
 </div>
+
+<!-- Load Froogaloop, Vimeo's JS API -->
+<!-- <script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script> -->
+<script src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+
+
+<script type="text/javascript">
+var players = $('.tracking')
+players.each(function(){
+  var $el = $(this);
+  var player = $f(this);
+  (function($el, player){
+  player.addEvent('ready', function() {
+      player.addEvent('play', function(){
+        // _kmq.push(['record', 'Played Video', {'Played Video Name':$el.data('video')}]);
+        console.log("Played Video", $el.data('video'));
+      });
+      player.addEvent('pause', function($){
+        // _kmq.push(['record', 'Paused Video', {'Paused Video Name':$el.data('video')}]);
+        console.log("Paused Video", $el.data('video'));
+      });
+      player.addEvent('finish', function(){
+        // _kmq.push(['record', 'Finished Video', {'Finished Video Name':$el.data('video')}]);
+        console.log("Finished Video", $el.data('video'));
+      });
+    });
+  })($el, player);
+});
+</script>
 
 </body>
 </html>

@@ -1,12 +1,14 @@
-# quick-start-bootsrap
-A template to get started with to build a new website.
-
-This is just an blank file with bootstrap, and jQuery.
-
-It has an index file, and exteral JS file and an external CSS file, already linked to the index file.
-
-The point is to to save the 10-20 minutes of building the structure of your websites files, so you can biuld out you idea faster.
-
-Just start adding bootstrap components to the body to get started.
-
 # Multi-Video-Tracking-Froogaloop
+
+This is an example of how to dynamically track your Vimeo Videos with analytics.
+
+Javascript tracks all of the vimeo videos on the page with the class "tracking".
+
+The title is captured from the data-video attribute.
+
+EX: data-video="Video Title"
+
+
+Currently the data logs Video Played, Paused, and FInished to the console.
+
+Uncomment the Kissmetrics API calls, send the data to Kissmetrics.
